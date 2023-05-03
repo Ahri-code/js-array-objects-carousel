@@ -32,6 +32,12 @@ const images = [
 
 for (let i = 0; i < images.length; i++){
     const img = images[i];
-    const printImg = `<img id="zoommed" src="./${img.image}" alt="${img.title}">`;
+    let printImg = `<div id="imgContainer">`;
+    printImg += `<div id="image">`;
+    printImg += `<img id="zoommed" src="./${img.image}" alt="${img.title}">`;
+    printImg += `</div>`;
+    printImg += `<p>${img.title}</p>`;
+    printImg += `<p>${img.text}</p>`;
+    printImg += `</div>`;
     document.getElementById("contained").innerHTML = printImg;
 }
