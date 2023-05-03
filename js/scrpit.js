@@ -30,14 +30,49 @@ const images = [
 
 // --- JS ---
 
-for (let i = 0; i < images.length; i++){
+    let i = 0;
+    create();
+
+// --- FUNCTIONS ---
+
+function create() {
     const img = images[i];
     let printImg = `<div id="imgContainer">`;
+    printImg += `<button class="fa-solid fa-angle-right button" id="next"></button>`;
     printImg += `<div id="image">`;
     printImg += `<img id="zoommed" src="./${img.image}" alt="${img.title}">`;
     printImg += `</div>`;
     printImg += `<p>${img.title}</p>`;
     printImg += `<p>${img.text}</p>`;
+    printImg += `<button class="fa-solid fa-angle-left button" id="prev"></button>`;
     printImg += `</div>`;
     document.getElementById("contained").innerHTML = printImg;
+
+    button = document.getElementById("next");
+    button.addEventListener("click", next);
+
+    button = document.getElementById("prev");
+    button.addEventListener("click", prev);
+}
+
+function next() {
+    if (i == images.length - 1) {
+        i = 0;
+        create();
+    }
+    else {
+        i++;
+        create();
+    }
+}
+
+function prev() {
+    if (i == 0) {
+        i = images.length - 1;
+        create();
+    }
+    else {
+        i--;
+        create();
+    }
 }

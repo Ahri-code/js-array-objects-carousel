@@ -29,6 +29,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 #image {
@@ -40,4 +41,30 @@
     max-width: 100%;
     max-height: 90%;
     object-fit: contain;
+}
+
+.button {
+    background-color: #ffffff84;
+    border-radius: 50%;
+    border: 0;
+    padding: 0.25rem 0.50rem;
+    font-size: 25px;
+}
+
+
+#next {
+    position: absolute;
+    transform: translate(-50% -50%);
+    right: 2%;
+    top: 50%;
+    z-index: 99;
+}
+
+#prev {
+    position: absolute;
+    transform: translate(-50% -50%);
+    left: 2%;
+    bottom: 50%;
+    z-index: 99;
+
 }
